@@ -1,3 +1,6 @@
 [submodule "lesson-4-app-navigation/andfun-kotlin-android-trivia"]
 	path = lesson-4-app-navigation/andfun-kotlin-android-trivia
 	url = git@github.com:udacity/andfun-kotlin-android-trivia.git
+[submodule "lesson-3-app-navigation/andfun-kotlin-android-trivia"]
+	path = lesson-3-app-navigation/andfun-kotlin-android-trivia
+	url = git@github.com:udacity/andfun-kotlin-android-trivia.git
