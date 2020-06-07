@@ -67,6 +67,8 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        dessertsSold = 0
+
         Timber.i("onCreate called")
 
         // Use Data Binding to get reference to the views
@@ -82,6 +84,11 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
 
         // Make sure the correct dessert is showing
         binding.dessertButton.setImageResource(currentDessert.imageId)
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Timber.i("onRestart")
     }
 
     /**
