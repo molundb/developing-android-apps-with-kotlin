@@ -178,6 +178,11 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
         Timber.i("onSaveInstanceState Called")
     }
 
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        Timber.i("onRestoreInstanceState called")
+    }
+
     override fun onStart() {
         super.onStart()
         Timber.i("onStart called")
