@@ -9,33 +9,29 @@ import androidx.lifecycle.ViewModel
 class GameViewModel : ViewModel() {
 
     companion object {
-        // These represent different important times
-        // This is when the game is over
         const val DONE = 0L
-        // This is the number of milliseconds in a second
         const val ONE_SECOND = 1000L
-        // This is the total time of the game
         const val COUNTDOWN_TIME = 10000L
     }
 
     private val timer: CountDownTimer
 
     private val _word = MutableLiveData<String>()
-    val word : LiveData<String>
+    val word: LiveData<String>
         get() = _word
 
     private val _score = MutableLiveData<Int>()
-    val score : LiveData<Int>
+    val score: LiveData<Int>
         get() = _score
 
     private val _currentTime = MutableLiveData<Long>()
-    val currentTime : LiveData<Long>
+    val currentTime: LiveData<Long>
         get() = _currentTime
 
     private lateinit var wordList: MutableList<String>
 
     private val _eventGameFinish = MutableLiveData<Boolean>()
-    val eventGameFinish : LiveData<Boolean>
+    val eventGameFinish: LiveData<Boolean>
         get() = _eventGameFinish
 
     init {
