@@ -59,30 +59,15 @@ class GameFragment : Fragment() {
             binding.timerText.text = DateUtils.formatElapsedTime(newTime)
         })
 
-        viewModel.eventGameFinish.observe(this, Observer {hasFinished ->
-            if(hasFinished) {
-                gameFinished()
+        viewModel.eventGameFinish.observe(this, Observer {isFinished ->
+            if(isFinished) {
+                val currentScore = viewModel.score.value ?: 0
+                val action = GameFragmentDirections.actionGameToScore(currentScore)
+                findNavController(this).navigate(action)
                 viewModel.onGameFinishComplete()
             }
         })
 
-        updateWordText()
         return binding.root
-
-    }
-
-    /**
-     * Called when the game is finished
-     */
-    private fun gameFinished() {
-        val action = GameFragmentDirections.actionGameToScore(viewModel.score.value ?: 0)
-        findNavController(this).navigate(action)
-    }
-
-    /** Methods for updating the UI **/
-
-    private fun updateWordText() {
-        binding.wordText.text = viewModel.word.value
-
     }
 }

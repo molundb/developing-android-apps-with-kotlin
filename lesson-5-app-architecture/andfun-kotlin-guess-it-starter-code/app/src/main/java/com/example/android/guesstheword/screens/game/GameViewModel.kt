@@ -53,11 +53,6 @@ class GameViewModel : ViewModel() {
         timer.start()
     }
 
-    override fun onCleared() {
-        super.onCleared()
-        timer.cancel()
-    }
-
     /**
      * Resets the list of words and randomizes the order
      */
@@ -112,5 +107,10 @@ class GameViewModel : ViewModel() {
 
     fun onGameFinishComplete() {
         _eventGameFinish.value = false
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        timer.cancel()
     }
 }
